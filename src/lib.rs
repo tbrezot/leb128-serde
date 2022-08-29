@@ -1,6 +1,11 @@
+mod de;
 mod error;
+mod ser;
 
-pub mod bytes;
-pub mod index;
+#[cfg(test)]
+mod tests;
 
+pub use de::Deserializer;
 pub use error::Error;
+pub use ser::Serializer;
+pub mod tools;
