@@ -32,7 +32,7 @@ impl<'a> Deserializer<'a> {
                 len_u64
             ))
         })?;
-        let mut buf = vec![0_u8; len];
+        let mut buf = vec![0; len];
         self.readable.read_exact(&mut buf).map_err(|_| {
             Error::InvalidSize(format!(
                 "Deserializer: failed reading array of: {} bytes",
